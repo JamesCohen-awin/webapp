@@ -7,8 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-node.default['haproxy']['enable_default_http'] = false
-
 # TODO detect servers depending on environment
 backendparams = 'check inter 5000 maxconn 20 rise 1 slowstart 30s weight 100';
 servers = [
