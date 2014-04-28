@@ -21,7 +21,7 @@ haproxy_lb 'myapp' do
   })
 end
 
-haproxy_lb 'myapp' do
+haproxy_lb 'myapp-backend' do
   type 'backend'
   servers servers
   params({

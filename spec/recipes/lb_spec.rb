@@ -23,7 +23,7 @@ describe 'webapp::lb' do
   end
 
   it 'Contains the myapp backend' do
-    expect(chef_run).to render_file(haproxyConfigFile).with_content('backend myapp')
+    expect(chef_run).to render_file(haproxyConfigFile).with_content('backend myapp-backend')
   end
 
   it 'Uses round-robin load balancing' do

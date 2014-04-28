@@ -18,7 +18,7 @@ RSpec.configure do |config|
   # config.path = 'ohai.json'
 
   # Specify the operating platform to mock Ohai data from
-  config.platform = 'redhat'
+  config.platform = 'centos'
 
   # Specify the operating version to mock Ohai data from
   config.version = '6.4'

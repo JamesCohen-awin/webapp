@@ -17,7 +17,11 @@ describe 'webapp::webserver' do
   end
 
   it 'Creates a virtualhost' do
-    expect(chef_run).to render_file('/etc/httpd/sites-available/webapp.conf')
+    expect(chef_run).to render_file('/etc/httpd/sites-available/webapp.conf').with_content('VirtualHost')
+  end
+
+  it 'Has a virtualhost with the right name' do
+    expect(chef_run).to render_file('/etc/httpd/sites-available/webapp.conf').with_content('ServerName webapp')
   end
 
 end
