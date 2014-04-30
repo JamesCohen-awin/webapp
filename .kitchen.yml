@@ -13,4 +13,5 @@ suites:
     run_list:
       - recipe[webapp::webserver]
       - recipe[webapp::lb]
+      - recipe[webapp::code]
     attributes:
