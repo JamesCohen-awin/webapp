@@ -9,7 +9,6 @@ RSpec.configure do |c|
   end
 end
 
-
 # Apache
 describe service('httpd') do
     it { should be_enabled }
@@ -32,6 +31,6 @@ describe port(80) do
 end
 
 # requesting a PHP page via haproxy -> Apache
-describe command('curl -H "Header: webapp" http://localhost/phpinfo.php') do
-    it { should match /PHP Version 5.3/ }
+describe command('curl -H "Host: webapp" http://localhost/phpinfo.php') do
+    its(:stdout) { should match /PHP Version 5.3/ }
 end
