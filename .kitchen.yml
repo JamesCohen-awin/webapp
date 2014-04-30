@@ -9,7 +9,7 @@ platforms:
   - name: centos-6.4
 
 suites:
-  - name: default
+  - name: devvm
     run_list:
       - recipe[webapp::webserver]
       - recipe[webapp::lb]
