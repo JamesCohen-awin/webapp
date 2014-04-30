@@ -8,6 +8,7 @@
 #
 
 include_recipe "apache2"
+include_recipe "apache2::mod_php5"
 
 web_app "webapp" do
   server_name "webapp"
