@@ -1,7 +1,12 @@
 require 'spec_helper'
 
+
 describe 'webapp::webserver' do
   let(:chef_run) { ChefSpec::Runner.new(step_into: ["apache2_web_app"]).converge(described_recipe) }
+
+  before do
+    stub_command("which php").and_return(false)
+  end
 
   it 'Includes the Apache2 recipe' do
     expect(chef_run).to include_recipe 'apache2::default'
