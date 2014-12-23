@@ -3,7 +3,7 @@ require 'spec_helper'
 haproxyConfigFile = '/etc/haproxy/haproxy.cfg'
 
 describe 'webapp::lb' do
-  let(:chef_run) { ChefSpec::Runner.new(step_into: ["haproxy_lb"]).converge(described_recipe) }
+  let(:chef_run) { ChefSpec::SoloRunner.new(step_into: ["haproxy_lb"]).converge(described_recipe) }
 
   it 'Includes the HAProxy recipe' do
     expect(chef_run).to include_recipe 'haproxy::default'

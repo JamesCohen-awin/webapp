@@ -2,7 +2,7 @@ require 'spec_helper'
 
 
 describe 'webapp::webserver' do
-  let(:chef_run) { ChefSpec::Runner.new(step_into: ["apache2_web_app"]).converge(described_recipe) }
+  let(:chef_run) { ChefSpec::SoloRunner.new(step_into: ["apache2_web_app"]).converge(described_recipe) }
 
   before do
     stub_command("which php").and_return(false)
